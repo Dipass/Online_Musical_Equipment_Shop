@@ -1,0 +1,15 @@
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\bin\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.deps.json
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\bin\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\bin\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.pdb
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\bin\Debug\net6.0\Online_Musical_Equipment_Shop_DAL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\bin\Debug\net6.0\Online_Musical_Equipment_Shop_DAL.pdb
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.csproj.AssemblyReference.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.AssemblyInfoInputs.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.AssemblyInfo.cs
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.csproj.CoreCompileInputs.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.csproj.CopyComplete
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\refint\Online_Musical_Equipment_Shop_BLL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\Online_Musical_Equipment_Shop_BLL.pdb
+D:\Education - Programming and Books\Learning ASP.NET Core\Online_Musical_Equipment_Shop\Online_Musical_Equipment_Shop_BLL\obj\Debug\net6.0\ref\Online_Musical_Equipment_Shop_BLL.dll

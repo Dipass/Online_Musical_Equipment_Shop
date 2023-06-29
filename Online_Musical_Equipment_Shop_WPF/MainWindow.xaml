@@ -1,0 +1,314 @@
+﻿<Window x:Class="Online_Musical_Equipment_Shop_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Online_Musical_Equipment_Shop_WPF"
+        mc:Ignorable="d"
+        Height="720" Width="1080" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent" 
+        Title="Musical_Shops_Equipment_WPF"
+        MouseDown="Window_MouseDown">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <Style x:Key="DataGridCellStyle1" TargetType="{x:Type DataGridCell}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#2F2440"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Margin" Value="15 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Border Background="{TemplateBinding Background}" BorderThickness="0" SnapsToDevicePixels="True">
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border 
+        Background="#efefef"
+        CornerRadius="30">
+
+        <!--Left section-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button HorizontalAlignment="Left" Margin="20 30 0 35" Style="{StaticResource topButton}">
+                    <Icons:PackIconMaterial Kind="Menu" Width="15" Height="15"/>
+                </Button>
+
+                <Border Grid.Row="1" Background="#071330" CornerRadius="0 50 0 30">
+                    <DockPanel>
+                        
+
+                        <TextBlock Text="The good songs" Foreground="#fff" FontSize="22" FontWeight="SemiBold" TextAlignment="Center" Margin="5 50 0 10" DockPanel.Dock="Top"/>
+
+                        <TextBlock Text="The good songs" Foreground="#efefef" FontSize="14" FontWeight="Medium" TextAlignment="Center" DockPanel.Dock="Top"/>
+
+                        <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="#C3CEDA"/>
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icons:PackIconMaterial Kind="HomeVariant" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Dashboard"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icons:PackIconMaterial Kind="Calendar" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Calendar"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icons:PackIconMaterial Kind="InstrumentTriangle" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Products"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+                        <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" Margin="15 0">
+                            <StackPanel Orientation="Horizontal">
+                                <Icons:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Log out"/>
+                            </StackPanel>
+                        </Button>
+                    </DockPanel>
+                </Border>
+            </Grid>
+
+            <!--Main section-->
+            <Grid Grid.Column="1" Margin="30 20 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="14.59"/>
+                    <RowDefinition Height="45.7"/>
+                </Grid.RowDefinitions>
+
+                <!--Search textbox-->
+                <Grid Width="300" HorizontalAlignment="Left" Margin="0,0,0,63" Grid.RowSpan="2">
+                    <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="False" Panel.ZIndex="1" Text="Search here..." Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+
+                    <TextBox x:Name="txtSearch" Style="{StaticResource textboxSearch}"/>
+
+                    <Icons:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center" Margin="0 0 15 0" Foreground="#b0b9c6" HorizontalAlignment="Right"/>
+                </Grid>
+
+                <!--Tob buttons-->
+                <Button Style="{StaticResource topButton}" Margin="780,14,0,14" Background="#BA0F30" Click="Button_Click_Close" 
+                        Width="20" Height="20" 
+                        Foreground="#fff">
+                    <Icons:PackIconMaterial Kind="Close" Width="10"/>
+                </Button>
+
+                <Button Style="{StaticResource topButton}" Margin="740,14,0,14" Background="#2F2440" 
+                        Foreground="#fff"
+                        Click="Button_Click_Save" 
+                        Width="20" Height="20" >
+                    <Icons:PackIconMaterial Kind="WindowMinimize" Width="10"/>
+                </Button>
+
+                <Button Style="{StaticResource topButton}" Margin="700,14,0,14" Background="#FAD02C"
+                        Click="Button_Click_Load_all_Instruments" 
+                        Width="20" Height="20" >
+                    <Icons:PackIconMaterial Kind="Database" Width="10" Foreground="#fff"/>
+                </Button>
+
+                <!--Page title-->
+                <TextBlock Text="Instruments" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0,20,0,55" HorizontalAlignment="Left" Foreground="#121518" Grid.RowSpan="2"/>
+
+                <!--Insert button-->
+                <Button Style="{StaticResource addButton}" Margin="0,24,0,4" Grid.Row="1" Click="Button_Click_Open_Menu_Insert">
+                    <StackPanel Orientation="Horizontal">
+                        <Icons:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
+                        <TextBlock Text="Insert New Instrument"/>
+                    </StackPanel>
+                </Button>
+
+
+                <!--Separator-->
+                <Separator Height="1" Grid.Row="2" Background="#dae2ea" Margin="0,54,0,10" Grid.RowSpan="2"/>
+
+                <!--Tab buttons-->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,10" Grid.RowSpan="2">
+                    <Button Content="Instruments" Style="{StaticResource tabButton}" BorderBrush="#071330"/>
+
+                    <Button Content="Manufactures" Style="{StaticResource tabButton}"/>
+
+                    <Button Content="Customers" Style="{StaticResource tabButton}"/>
+                </StackPanel>
+
+                <!--Counter title-->
+                <TextBlock Text="150 Instruments" Grid.Row="4" FontSize="18" FontWeight="SemiBold" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <TextBlock Text="Filter by" Grid.Row="4" FontSize="14" FontWeight="SemiBold" Foreground="#121518" Margin="564,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <!--Filter textbox-->
+                <Grid Width="200" HorizontalAlignment="Left" Grid.Row="4" Margin="630,0,0,0">
+                    <TextBlock Margin="15 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="False" Panel.ZIndex="1" Text="Search in Instruments" Visibility="{Binding ElementName=txtFilter, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+
+                    <TextBox x:Name="txtFilter" Style="{StaticResource textboxFilter}"/>
+                </Grid>
+
+
+                <!--Instruments DataGrid-->
+                <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="5" x:Name="instrumentsDataGrid" ItemsSource="{Binding Instruments}" Margin="0,10,0,14" Grid.RowSpan="2" SelectionChanged="instrumentsDataGrid_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
+                            <DataGridCheckBoxColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
+                                </DataTemplate>
+                            </DataGridCheckBoxColumn.HeaderTemplate>
+                        </DataGridCheckBoxColumn>
+
+                        <DataGridTextColumn Header="Instrumets ID" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
+
+                        <DataGridTemplateColumn Header="Instruments title"  Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding InstrumentTitle}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 1" Width="auto"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Instruments description"  Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock TextWrapping="WrapWithOverflow" 
+                                                   Text="{Binding Description}" 
+                                                   VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 1" Width="auto"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Manufacturer id" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding ManufacturerId}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 1" Width="auto"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Categories id title"  Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding CategoriesId}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 1" Width="auto"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Operations" CanUserResize="False" IsReadOnly="True" Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource gridEditButton}" Click="Button_Click_Edit">
+                                            <Icons:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
+                                        </Button>
+
+                                        <Button Style="{StaticResource gridDeleteButton}" Margin="5,0,0,0" Click="Button_Click_Remove">
+                                            <Icons:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!--Pagination Sections-->
+                <Border Grid.Row="6" HorizontalAlignment="Right" BorderBrush="#dee4ec" BorderThickness="1" CornerRadius="5" Padding="5" Background="#fff" Margin="0 10 10 10" Grid.RowSpan="2">
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Style="{StaticResource paginationButton}">
+                            <Icons:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource paginationButtonIcon}"/>
+                        </Button>
+
+                        <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
+
+                        <Button Style="{StaticResource paginationButton}" Content="1"/>
+                        <Button Style="{StaticResource paginationButton}" Content="2" Background="#0C4160" Foreground="#fff"/>
+                        <Button Style="{StaticResource paginationButton}" Content="3"/>
+
+                        <TextBlock Text="..." Foreground="#6c7682" VerticalAlignment="Center" FontSize="15" Margin="10 0"/>
+
+                        <Button Style="{StaticResource paginationButton}" Content="7"/>
+                        <Button Style="{StaticResource paginationButton}" Content="8"/>
+                        <Button Style="{StaticResource paginationButton}" Content="9"/>
+
+                        <Button Style="{StaticResource paginationButton}">
+                            <Icons:PackIconMaterial Kind="ChevronRight" Style="{StaticResource paginationButtonIcon}"/>
+                        </Button>
+                    </StackPanel>
+
+                </Border>
+                
+            </Grid>
+
+            <Border Visibility="Hidden" x:Name="menuinsert" HorizontalAlignment="Right" Width="230" Grid.Column="1" Background="#071330" CornerRadius="50 30 30 50">
+                <DockPanel >
+                    <TextBlock Text="New instrument" Foreground="#fff" FontSize="22" FontWeight="SemiBold"
+                                   DockPanel.Dock="Top"  TextAlignment="Center" Margin="20 130 20 0" />
+
+                    <TextBlock Text="Title" Foreground="#fff" FontSize="14" FontWeight="SemiBold"
+                                   DockPanel.Dock="Top" TextAlignment="center" Margin="20 100 20 5" />
+                    <Grid HorizontalAlignment="center" Width="230" Height="30" DockPanel.Dock="Top">
+                        <TextBox Text="Flute" x:Name="textTitle" VerticalAlignment="Top" Height="30" Margin="20 0 20 0" />
+                    </Grid>
+
+                    <TextBlock Text="Description" Foreground="#fff" FontSize="14" FontWeight="SemiBold"
+                                   DockPanel.Dock="Top" TextAlignment="center" Margin="20 50 20 5" />
+                    <Grid HorizontalAlignment="center" Width="230" Height="30" DockPanel.Dock="Top">
+                        <TextBox Text="Something" x:Name="textDescription" VerticalAlignment="Top" Height="30" Margin="20 0 20 0" />
+                    </Grid>
+
+
+                    <Grid HorizontalAlignment="center" Width="230" DockPanel.Dock="Top">
+                        <Button  Foreground="#071330"  Height="40" Margin="25 10 25 20" Style="{StaticResource menubutton}" Background="#C3CEDA" Click="Button_Click_Add_New_Instrument" >
+                            <TextBlock Padding="35 0 35 0" Text="+ Add new data" VerticalAlignment="Center"/>
+                        </Button>
+
+                        <Button  Foreground="#fff" Width="100"  Height="30" Margin="25 80 25 0"  Style="{StaticResource menubutton}" Click="Button_Click_Close_Menu_Insert" >
+                            <TextBlock Padding="35 0 35 0" Text="Close" VerticalAlignment="Center"/>
+                        </Button>
+                    </Grid>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
